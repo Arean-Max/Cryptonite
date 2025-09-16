@@ -1,2 +1,114 @@
-# Cryptonite
-Cross-platform command-line tool for secure data encryption and decryption
+# Cryptonite — Secure E2E Encryptor
+
+**Cryptonite** — это кроссплатформенный инструмент командной строки для сквозного шифрования (end-to-end encryption).  
+Он использует гибридную криптографию: RSA-OAEP + AES-256-GCM.  
+
+Проще говоря:  
+- RSA отвечает за защиту ключей.  
+- AES-256-GCM — за быстрое и надежное шифрование данных.  
+
+Проект создан в рамках **Akin Foundation** для защиты текстов и файлов от несанкционированного доступа.  
+
+---
+
+## Возможности
+
+- Генерация RSA-ключей (2048 / 4096 бит).  
+- Поддержка защищенных паролем приватных ключей.  
+- Шифрование текста прямо из командной строки.  
+- Шифрование файлов любого размера.  
+- Расшифровка в консоль или в файл.  
+- Возможность ввода приватного ключа вручную (если файл недоступен).  
+- Работа на Windows, Linux, macOS.  
+
+---
+
+## Установка
+
+1. Установите Python версии 3.10 или выше.  
+   Проверить версию:
+   ```bash
+   python --version
+   ```
+
+2. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/akin-foundation/cryptonite.git
+   cd cryptonite
+   ```
+
+3. Установите зависимости:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   или напрямую:
+   ```bash
+   pip install cryptography
+   ```
+
+---
+
+## Использование
+
+Показать все команды:
+```bash
+python main.py --help
+```
+
+### 1. Генерация ключей
+```bash
+python main.py genkeys --bits 4096 --protect
+```
+- `--bits` — размер ключа (минимум 2048, рекомендуется 4096).  
+- `--protect` — запрашивает пароль и шифрует приватный ключ.  
+- По умолчанию сохраняет ключи как `private_key.pem` и `public_key.pem`.  
+
+---
+
+### 2. Шифрование текста
+```bash
+python main.py encrypt --text "Akin Foundation" --pub public_key.pem --out message.enc
+```
+- `--text` — текст для шифрования.  
+- `--out` — имя файла для результата (по умолчанию message.enc).  
+
+---
+
+### 3. Шифрование файла
+```bash
+python main.py encrypt --in secret.bin --pub public_key.pem --out message.enc
+```
+
+---
+
+### 4. Дешифрование
+```bash
+python main.py decrypt --in message.enc --priv private_key.pem --protect --out decrypted.bin
+```
+- `--protect` — запросит пароль, если ключ защищен.  
+- `--out` — файл для расшифрованных данных (если не указать — выводит в консоль).  
+
+---
+
+## Важные советы по безопасности
+
+- Никогда не публикуйте приватные ключи в открытом доступе.  
+- Храните `private_key.pem` только в защищенных местах (например, в менеджере секретов).  
+- Используйте пароль (`--protect`) для шифрования приватного ключа.  
+- Проверяйте целостность файлов и не используйте ключи на непроверенных машинах.  
+
+---
+
+## Структура проекта
+
+```
+Cryptonite/
+│── crypto_utils/        # Вспомогательные утилиты (RSA, AES, сериализация)
+│── assets/              # Инициализация CLI-интерфейса
+│── commands/            # Логика CLI-команд (genkeys, encrypt, decrypt)
+│── main.py              # Точка входа (CLI-интерфейс)
+│── requirements.txt     # Зависимости
+│── README.md            # Документация
+│── LICENSE              # Лицензия
+```
