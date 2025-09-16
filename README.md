@@ -1,4 +1,4 @@
-# Cryptonite — Secure E2E Encryptor
+# Cryptonite — Secure E2E Encryptor (DEMO)
 
 **Cryptonite** — это кроссплатформенный инструмент командной строки для сквозного шифрования (end-to-end encryption).  
 Он использует гибридную криптографию: RSA-OAEP + AES-256-GCM.  
