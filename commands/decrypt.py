@@ -5,6 +5,7 @@ from cryptography.hazmat.primitives import serialization
 from crypto_utils.utils import detect_debugger
 from crypto_utils.keys import load_private_key
 from crypto_utils.crypto import decrypt_blob
+from crypto_utils.utils import ascii_art
 
 def cmd_decrypt(args):
     if detect_debugger():
@@ -45,6 +46,7 @@ def cmd_decrypt(args):
 
     if args.out:
         Path(args.out).write_bytes(plaintext)
+        ascii_art()
         print(f'Decrypted data written to: {args.out}')
     else:
         try:
