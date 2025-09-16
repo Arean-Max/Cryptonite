@@ -33,7 +33,7 @@
 
 2. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/akin-foundation/cryptonite.git
+   git clone https://github.com/Arean-Max/Cryptonite
    cd cryptonite
    ```
 
