@@ -1,0 +1,18 @@
+import sys, base64
+
+def detect_debugger():
+    try:
+        tracer = sys.gettrace()
+        return tracer is not None
+    except Exception:
+        return False
+
+def b64(obj: bytes) -> str:
+    return base64.b64encode(obj).decode('ascii')
+
+def ub64(s: str) -> bytes:
+    return base64.b64decode(s.encode('ascii'))
+
+def wipe_bytes(b: bytearray):
+    for i in range(len(b)):
+        b[i] = 0
