@@ -3,6 +3,7 @@ from pathlib import Path
 from crypto_utils.utils import detect_debugger
 from crypto_utils.keys import load_public_key
 from crypto_utils.crypto import encrypt_bytes
+from crypto_utils.utils import ascii_art
 
 def cmd_encrypt(args):
     if detect_debugger():
@@ -20,4 +21,6 @@ def cmd_encrypt(args):
 
     out_path = args.out
     Path(out_path).write_text(json.dumps(blob, ensure_ascii=False), encoding='utf-8')
+    
+    ascii_art()
     print(f'Encrypted output written to: {out_path}')
