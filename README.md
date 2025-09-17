@@ -23,28 +23,79 @@
 
 ---
 
-## Установка
+## Установка (MacOS, Linux, Windows)
 
-1. Установите Python версии 3.10 или выше.  
-   Проверить версию:
+# 1. macOS
+   Перед установкой убедитесь, что Python уже установлен на вашем устройстве. Для этого откройте терминал и выполните команду:
+   ```bash
+   python3 --version
+   ```
+
+   Если Python установлен, вы увидите версию. Если Python не установлен, вам нужно будет установить его с помощью Homebrew. Для этого выполните следующие шаги:
+
+   1) Установите Homebrew (если он еще не установлен):
+
+      [Перейдите на официальный сайт Homebrew](https://brew.sh/)
+
+   2) Установите Python с помощью Homebrew:
+   ```bash
+   brew install python
+   ```
+
+   3) Убедитесь, что Python и pip установлены правильно, выполнив:
    ```bash
    python --version
    ```
 
-2. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com/Arean-Max/Cryptonite
-   cd cryptonite
-   ```
-
-3. Установите зависимости:
+   4) Установите зависимости:
    ```bash
    pip install -r requirements.txt
    ```
 
-   или напрямую:
+# 2. Linux (Debian & Ubuntu)
+   1) Обновите списки пакетов и установите необходимые зависимости:
    ```bash
-   pip install cryptography
+   sudo apt update
+   sudo apt install python3 python3-pip
+   ```
+
+   2) Убедитесь, что Python и pip установлены правильно, выполнив:
+   ```bash
+   python3 --version
+   ```
+
+   3) Установите зависимости с помощью `pip`:
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+
+# 2.1. Linux (Fedora)
+   1) Установите Python и pip:
+   ```bash
+   sudo dnf install python3 python3-pip
+   ```
+
+   2) Убедитесь, что Python и pip установлены правильно, выполнив:
+   ```bash
+   python3 --version
+   ```
+   
+   3) Установите зависимости:
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+
+# 3. Windows
+   1) Установите [Python](python.org) с официального сайта
+
+   2) Убедитесь, что Python и pip установлены правильно, выполнив:
+   ```bash
+   python --version
+   ```
+   
+   3) Откройте командную строку или PowerShell и выполните команду:
+   ```bash
+   pip install -r requirements.txt
    ```
 
 ---
