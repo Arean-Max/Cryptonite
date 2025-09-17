@@ -25,7 +25,7 @@
 
 ## Установка (MacOS, Linux, Windows)
 
-# 1. macOS
+### 1. macOS
    Перед установкой убедитесь, что Python уже установлен на вашем устройстве. Для этого откройте терминал и выполните команду:
    ```bash
    python3 --version
@@ -52,7 +52,7 @@
    pip install -r requirements.txt
    ```
 
-# 2. Linux (Debian & Ubuntu)
+### 2. Linux (Debian & Ubuntu)
    1) Обновите списки пакетов и установите необходимые зависимости:
    ```bash
    sudo apt update
@@ -69,7 +69,7 @@
    pip3 install -r requirements.txt
    ```
 
-# 2.1. Linux (Fedora)
+### 2.1. Linux (Fedora)
    1) Установите Python и pip:
    ```bash
    sudo dnf install python3 python3-pip
@@ -85,7 +85,7 @@
    pip3 install -r requirements.txt
    ```
 
-# 3. Windows
+### 3. Windows
    1) Установите [Python](python.org) с официального сайта
 
    2) Убедитесь, что Python и pip установлены правильно, выполнив:
