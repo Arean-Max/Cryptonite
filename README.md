@@ -142,7 +142,7 @@ python main.py decrypt --in message.enc --priv private_key.pem --protect --out d
 
 ---
 
-## Важные советы по безопасности
+## Safety tips
 
 - Никогда не публикуйте приватные ключи в открытом доступе.  
 - Храните `private_key.pem` только в защищенных местах (например, в менеджере секретов).  
@@ -150,16 +150,3 @@ python main.py decrypt --in message.enc --priv private_key.pem --protect --out d
 - Проверяйте целостность файлов и не используйте ключи на непроверенных машинах.  
 
 ---
-
-## Структура проекта
-
-```
-Cryptonite/
-│── crypto_utils/        # Вспомогательные утилиты (RSA, AES, сериализация)
-│── assets/              # Инициализация CLI-интерфейса
-│── commands/            # Логика CLI-команд (genkeys, encrypt, decrypt)
-│── main.py              # Точка входа (CLI-интерфейс)
-│── requirements.txt     # Зависимости
-│── README.md            # Документация
-│── LICENSE              # Лицензия
-```
